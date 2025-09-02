@@ -1,0 +1,302 @@
+<%- include('./partials/header') %>
+<div class="wrapper">
+    <%- include('./partials/sidebar') %>
+    <%- include('./partials/adminHeader') %>
+
+    <div class="page-content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="settings-panel">
+                        <form action="/admin/site-settings/offer-bar" method="POST">
+                            <div class="settings-section">
+                                <div class="section-header">
+                                    <h3>Top Offer Bar</h3>
+                                    <p>This promotional text appears at the very top of your site.</p>
+                                </div>
+                                <div class="section-body">
+                                    <div class="form-group">
+                                        <label for="offer-bar-text">Offer Bar Text</label>
+                                        <input type="text" id="offer-bar-text" name="offerBarText" class="form-control" placeholder="e.g., ✨ Free Shipping On Orders Over ₹2000 ✨">
+                                    </div>
+                                </div>
+                                <div class="section-footer">
+                                    <button type="submit" class="btn btn-primary">Save Text</button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <form action="/admin/site-settings/hero-content" method="POST">
+                            <div class="settings-section">
+                                <div class="section-header">
+                                    <h3>Hero Banner Content</h3>
+                                    <p>Set the text that appears over your main homepage banner slides.</p>
+                                </div>
+                                <div class="section-body">
+                                    <div class="form-group">
+                                        <label for="hero-heading">Main Heading</label>
+                                        <input type="text" id="hero-heading" name="heroHeading" class="form-control" placeholder="e.g., Embrace Your Aura">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="hero-subheading">Subheading</label>
+                                        <textarea id="hero-subheading" name="heroSubheading" class="form-control" rows="2" placeholder="e.g., Artisanal crystal jewelry, mindfully crafted to align your energy."></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="hero-button-text">Button Text</label>
+                                        <input type="text" id="hero-button-text" name="heroButtonText" class="form-control" placeholder="e.g., Discover The Collection">
+                                    </div>
+                                </div>
+                                <div class="section-footer">
+                                    <button type="submit" class="btn btn-primary">Save Hero Content</button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <form action="/admin/site-settings/homepage-banners" method="POST" enctype="multipart/form-data">
+                            <div class="settings-section">
+                                <div class="section-header">
+                                    <h3>Homepage Banner Slides</h3>
+                                    <p>Manage the rotating images on your homepage. Recommended aspect ratio is 16:9.</p>
+                                </div>
+                                <div class="section-body">
+                                    <div class="banner-grid">
+                                        <div class="banner-upload-slot">
+                                            <label>Banner Slide 1</label>
+                                            <div class="image-uploader" onclick="document.getElementById('landing-banner-1').click();">
+                                                <img src="https://placehold.co/1920x1080/E2E8F0/475569?text=16:9" class="preview-image" id="preview-1">
+                                                <div class="upload-overlay">
+                                                    <i class="fas fa-camera"></i>
+                                                    <span>Change Image</span>
+                                                </div>
+                                                <input type="file" id="landing-banner-1" name="landingBanner1" hidden accept="image/*">
+                                            </div>
+                                        </div>
+                                        <div class="banner-upload-slot">
+                                            <label>Banner Slide 2</label>
+                                            <div class="image-uploader" onclick="document.getElementById('landing-banner-2').click();">
+                                                <img src="https://placehold.co/1920x1080/E2E8F0/475569?text=16:9" class="preview-image" id="preview-2">
+                                                <div class="upload-overlay">
+                                                    <i class="fas fa-camera"></i>
+                                                    <span>Change Image</span>
+                                                </div>
+                                                <input type="file" id="landing-banner-2" name="landingBanner2" hidden accept="image/*">
+                                            </div>
+                                        </div>
+                                        <div class="banner-upload-slot">
+                                            <label>Banner Slide 3</label>
+                                            <div class="image-uploader" onclick="document.getElementById('landing-banner-3').click();">
+                                                <img src="https://placehold.co/1920x1080/E2E8F0/475569?text=16:9" class="preview-image" id="preview-3">
+                                                <div class="upload-overlay">
+                                                    <i class="fas fa-camera"></i>
+                                                    <span>Change Image</span>
+                                                </div>
+                                                <input type="file" id="landing-banner-3" name="landingBanner3" hidden accept="image/*">
+                                            </div>
+                                        </div>
+                                        <div class="banner-upload-slot">
+                                            <label>Banner Slide 4</label>
+                                            <div class="image-uploader" onclick="document.getElementById('landing-banner-4').click();">
+                                                <img src="https://placehold.co/1920x1080/E2E8F0/475569?text=16:9" class="preview-image" id="preview-4">
+                                                <div class="upload-overlay">
+                                                    <i class="fas fa-camera"></i>
+                                                    <span>Change Image</span>
+                                                </div>
+                                                <input type="file" id="landing-banner-4" name="landingBanner4" hidden accept="image/*">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="section-footer">
+                                    <button type="submit" class="btn btn-primary">Save Slides</button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <form action="/admin/site-settings/auth-banners" method="POST" enctype="multipart/form-data">
+                            <div class="settings-section">
+                                <div class="section-header">
+                                    <h3>Authentication Page Banners</h3>
+                                    <p>Set images for the customer login and registration pages. Recommended ratio is 1:1.</p>
+                                </div>
+                                <div class="section-body">
+                                    <div class="auth-banner-grid">
+                                        <div class="banner-upload-slot">
+                                            <label>Login Page Image</label>
+                                            <div class="image-uploader square" onclick="document.getElementById('login-banner-input').click();">
+                                                <img src="https://placehold.co/400x400/E2E8F0/475569?text=1:1" class="preview-image" id="login-banner-preview">
+                                                <div class="upload-overlay">
+                                                    <i class="fas fa-camera"></i>
+                                                    <span>Change Image</span>
+                                                </div>
+                                                <input type="file" id="login-banner-input" name="loginBanner" hidden accept="image/*">
+                                            </div>
+                                        </div>
+                                        <div class="banner-upload-slot">
+                                            <label>Signup Page Image</label>
+                                            <div class="image-uploader square" onclick="document.getElementById('signup-banner-input').click();">
+                                                <img src="https://placehold.co/400x400/E2E8F0/475569?text=1:1" class="preview-image" id="signup-banner-preview">
+                                                <div class="upload-overlay">
+                                                    <i class="fas fa-camera"></i>
+                                                    <span>Change Image</span>
+                                                </div>
+                                                <input type="file" id="signup-banner-input" name="signupBanner" hidden accept="image/*">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="section-footer">
+                                    <button type="submit" class="btn btn-primary">Save Images</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('./partials/footer') %>
+
+<style>
+    :root {
+        --primary-color: #4f46e5;
+        --primary-hover-color: #4338ca;
+        --border-color: #e5e7eb;
+        --card-background-color: #ffffff;
+        --text-primary: #111827;
+        --text-secondary: #6b7280;
+        --input-border: #d1d5db;
+    }
+
+    .page-content { padding: 1.5rem; }
+
+    .settings-panel {
+        background: var(--card-background-color);
+        border: 1px solid var(--border-color);
+        border-radius: 0.75rem;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+        overflow: hidden;
+    }
+
+    form:not(:last-child) .settings-section {
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .section-header { padding: 1.5rem 2rem 0 2rem; }
+    .section-header h3 { font-size: 1.25rem; font-weight: 600; margin: 0; color: var(--text-primary); }
+    .section-header p { margin: 0.25rem 0 0; color: var(--text-secondary); font-size: 0.875rem; }
+    .section-body { margin-top: 1.5rem; padding: 0 2rem; }
+
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group label, .banner-upload-slot label {
+        font-weight: 500;
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #374151;
+        font-size: 0.875rem;
+    }
+    .form-control {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        border: 1px solid var(--input-border);
+        border-radius: 0.5rem;
+        font-size: 1rem;
+        transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    textarea.form-control { resize: vertical; }
+    .form-control:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+    }
+
+    .banner-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1.5rem;
+    }
+    .auth-banner-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1.5rem;
+        max-width: 500px;
+    }
+
+    .image-uploader {
+        position: relative;
+        cursor: pointer;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        border: 2px dashed var(--input-border);
+        transition: border-color 0.2s;
+    }
+    .image-uploader:hover { border-color: var(--primary-color); }
+    .image-uploader:hover .upload-overlay { opacity: 1; }
+    .preview-image { width: 100%; display: block; background-color: #f3f4f6; }
+    .image-uploader.square .preview-image { aspect-ratio: 1 / 1; object-fit: cover; }
+    .image-uploader:not(.square) .preview-image { aspect-ratio: 16 / 9; object-fit: cover; }
+    .upload-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(17, 24, 39, 0.6);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out;
+    }
+    .upload-overlay i { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .upload-overlay span { font-size: 0.875rem; font-weight: 500; }
+
+    .section-footer {
+        padding: 1.5rem 2rem;
+        text-align: right;
+        background-color: #f9fafb;
+        margin-top: 1.5rem;
+        border-top: 1px solid var(--border-color);
+    }
+    .btn {
+        padding: 0.625rem 1.5rem;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        cursor: pointer;
+        border: none;
+        font-size: 0.9rem;
+    }
+    .btn-primary { background: var(--primary-color); color: white; transition: background-color 0.2s; }
+    .btn-primary:hover { background: var(--primary-hover-color); }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        function setupImagePreview(inputId, previewId) {
+            const inputElement = document.getElementById(inputId);
+            const previewElement = document.getElementById(previewId);
+
+            if (inputElement && previewElement) {
+                inputElement.addEventListener('change', function(event) {
+                    const file = event.target.files[0];
+                    if (file) {
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            previewElement.src = e.target.result;
+                        }
+                        reader.readAsDataURL(file);
+                    }
+                });
+            }
+        }
+
+        for (let i = 1; i <= 4; i++) {
+            setupImagePreview(`landing-banner-${i}`, `preview-${i}`);
+        }
+
+        setupImagePreview('login-banner-input', 'login-banner-preview');
+        setupImagePreview('signup-banner-input', 'signup-banner-preview');
+    });
+</script>

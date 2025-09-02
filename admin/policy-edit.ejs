@@ -1,0 +1,238 @@
+<%- include('./partials/header') %>
+
+<div class="wrapper">
+    <%- include('./partials/sidebar') %>
+    <div class="main-content">
+        <%- include('./partials/adminHeader') %>
+        <main class="page-content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="settings-panel">
+                            <form class="policy-form" action="/admin/site-settings/terms-and-conditions" method="POST">
+                                <div class="settings-section">
+                                    <div class="section-header">
+                                        <h3>Terms and Conditions</h3>
+                                        <p>Define the rules and guidelines for using your website and services.</p>
+                                    </div>
+                                    <div class="section-body">
+                                        <div class="custom-editor-container">
+                                            <div class="custom-toolbar">
+                                                <button type="button" class="toolbar-btn" data-command="bold" title="Bold"><i class="fas fa-bold"></i></button>
+                                                <button type="button" class="toolbar-btn" data-command="italic" title="Italic"><i class="fas fa-italic"></i></button>
+                                                <button type="button" class="toolbar-btn" data-command="underline" title="Underline"><i class="fas fa-underline"></i></button>
+                                                <div class="toolbar-divider"></div>
+                                                <button type="button" class="toolbar-btn" data-command="insertUnorderedList" title="Bulleted List"><i class="fas fa-list-ul"></i></button>
+                                                <button type="button" class="toolbar-btn" data-command="insertOrderedList" title="Numbered List"><i class="fas fa-list-ol"></i></button>
+                                                <div class="toolbar-divider"></div>
+                                                <button type="button" class="toolbar-btn" data-command="justifyLeft" title="Align Left"><i class="fas fa-align-left"></i></button>
+                                                <button type="button" class="toolbar-btn" data-command="justifyCenter" title="Align Center"><i class="fas fa-align-center"></i></button>
+                                                <button type="button" class="toolbar-btn" data-command="justifyRight" title="Align Right"><i class="fas fa-align-right"></i></button>
+                                            </div>
+                                            <div class="custom-editor" contenteditable="true"></div>
+                                            <input type="hidden" name="termsAndConditions" class="hidden-input">
+                                        </div>
+                                    </div>
+                                    <div class="section-footer">
+                                        <button type="submit" class="btn btn-primary">Save Terms and Conditions</button>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <form class="policy-form" action="/admin/site-settings/privacy-policy" method="POST">
+                                <div class="settings-section">
+                                    <div class="section-header">
+                                        <h3>Privacy Policy</h3>
+                                        <p>Explain how you collect, use, and protect your customers' data.</p>
+                                    </div>
+                                    <div class="section-body">
+                                        <div class="custom-editor-container">
+                                            <div class="custom-toolbar">
+                                                <button type="button" class="toolbar-btn" data-command="bold" title="Bold"><i class="fas fa-bold"></i></button>
+                                                <button type="button" class="toolbar-btn" data-command="italic" title="Italic"><i class="fas fa-italic"></i></button>
+                                                <button type="button" class="toolbar-btn" data-command="underline" title="Underline"><i class="fas fa-underline"></i></button>
+                                                <div class="toolbar-divider"></div>
+                                                <button type="button" class="toolbar-btn" data-command="insertUnorderedList" title="Bulleted List"><i class="fas fa-list-ul"></i></button>
+                                                <button type="button" class="toolbar-btn" data-command="insertOrderedList" title="Numbered List"><i class="fas fa-list-ol"></i></button>
+                                                <div class="toolbar-divider"></div>
+                                                <button type="button" class="toolbar-btn" data-command="justifyLeft" title="Align Left"><i class="fas fa-align-left"></i></button>
+                                                <button type="button" class="toolbar-btn" data-command="justifyCenter" title="Align Center"><i class="fas fa-align-center"></i></button>
+                                                <button type="button" class="toolbar-btn" data-command="justifyRight" title="Align Right"><i class="fas fa-align-right"></i></button>
+                                            </div>
+                                            <div class="custom-editor" contenteditable="true"></div>
+                                            <input type="hidden" name="privacyPolicy" class="hidden-input">
+                                        </div>
+                                    </div>
+                                    <div class="section-footer">
+                                        <button type="submit" class="btn btn-primary">Save Privacy Policy</button>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <form class="policy-form" action="/admin/site-settings/shipping-policy" method="POST">
+                                <div class="settings-section">
+                                    <div class="section-header">
+                                        <h3>Shipping Policy</h3>
+                                        <p>Inform customers about your shipping methods, costs, and timelines.</p>
+                                    </div>
+                                    <div class="section-body">
+                                        <div class="custom-editor-container">
+                                            <div class="custom-toolbar">
+                                                <button type="button" class="toolbar-btn" data-command="bold" title="Bold"><i class="fas fa-bold"></i></button>
+                                                <button type="button" class="toolbar-btn" data-command="italic" title="Italic"><i class="fas fa-italic"></i></button>
+                                                <button type="button" class="toolbar-btn" data-command="underline" title="Underline"><i class="fas fa-underline"></i></button>
+                                                <div class="toolbar-divider"></div>
+                                                <button type="button" class="toolbar-btn" data-command="insertUnorderedList" title="Bulleted List"><i class="fas fa-list-ul"></i></button>
+                                                <button type="button" class="toolbar-btn" data-command="insertOrderedList" title="Numbered List"><i class="fas fa-list-ol"></i></button>
+                                                <div class="toolbar-divider"></div>
+                                                <button type="button" class="toolbar-btn" data-command="justifyLeft" title="Align Left"><i class="fas fa-align-left"></i></button>
+                                                <button type="button" class="toolbar-btn" data-command="justifyCenter" title="Align Center"><i class="fas fa-align-center"></i></button>
+                                                <button type="button" class="toolbar-btn" data-command="justifyRight" title="Align Right"><i class="fas fa-align-right"></i></button>
+                                            </div>
+                                            <div class="custom-editor" contenteditable="true"></div>
+                                            <input type="hidden" name="shippingPolicy" class="hidden-input">
+                                        </div>
+                                    </div>
+                                    <div class="section-footer">
+                                        <button type="submit" class="btn btn-primary">Save Shipping Policy</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+<%- include('./partials/footer') %>
+
+<style>
+    :root {
+        --primary-color: #4f46e5;
+        --primary-hover-color: #4338ca;
+        --border-color: #e5e7eb;
+        --card-background-color: #ffffff;
+        --text-primary: #111827;
+        --text-secondary: #6b7280;
+        --panel-background: #f9fafb;
+    }
+
+    .page-content { padding: 1.5rem; }
+
+    .settings-panel {
+        background: var(--card-background-color);
+        border: 1px solid var(--border-color);
+        border-radius: 0.75rem;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+        overflow: hidden;
+    }
+
+    form:not(:last-child) .settings-section {
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .section-header { padding: 1.5rem 2rem 0 2rem; }
+    .section-header h3 { font-size: 1.25rem; font-weight: 600; margin: 0; color: var(--text-primary); }
+    .section-header p { margin: 0.25rem 0 0; color: var(--text-secondary); font-size: 0.875rem; }
+    .section-body {
+        margin-top: 1.5rem;
+        padding: 0 2rem;
+    }
+    
+    .section-footer {
+        padding: 1.5rem 2rem;
+        text-align: right;
+        background-color: var(--panel-background);
+        margin-top: 1.5rem;
+        border-top: 1px solid var(--border-color);
+    }
+
+    .btn { padding: 0.625rem 1.5rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; border: none; font-size: 0.9rem; }
+    .btn-primary { background: var(--primary-color); color: white; transition: background-color 0.2s; }
+    .btn-primary:hover { background: var(--primary-hover-color); }
+    
+    /* Custom Editor Styles */
+    .custom-editor-container {
+        border: 1px solid var(--border-color);
+        border-radius: 0.5rem;
+    }
+    .custom-toolbar {
+        padding: 0.5rem;
+        background-color: var(--panel-background);
+        border-bottom: 1px solid var(--border-color);
+        border-radius: 0.5rem 0.5rem 0 0;
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+    }
+    .toolbar-btn {
+        background: none;
+        border: none;
+        width: 32px;
+        height: 32px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+        transition: background-color 0.2s, color 0.2s;
+    }
+    .toolbar-btn:hover {
+        background-color: var(--border-color);
+        color: var(--text-primary);
+    }
+    .toolbar-divider {
+        width: 1px;
+        height: 20px;
+        background-color: var(--border-color);
+        margin: 0 0.5rem;
+    }
+    .custom-editor {
+        min-height: 400px;
+        padding: 1rem;
+        line-height: 1.6;
+        outline: none;
+        overflow-y: auto;
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // --- Custom Editor Logic ---
+        const allToolbars = document.querySelectorAll('.custom-toolbar');
+
+        allToolbars.forEach(toolbar => {
+            const editor = toolbar.nextElementSibling;
+            const buttons = toolbar.querySelectorAll('.toolbar-btn');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const command = button.dataset.command;
+                    document.execCommand(command, false, null);
+                    editor.focus();
+                });
+            });
+        });
+
+        // --- Form Submission Logic ---
+        const policyForms = document.querySelectorAll('.policy-form');
+
+        policyForms.forEach(form => {
+            form.addEventListener('submit', (e) => {
+                // Find the editor and hidden input within the submitted form
+                const editor = form.querySelector('.custom-editor');
+                const hiddenInput = form.querySelector('.hidden-input');
+
+                // Sync the editor's HTML content to the hidden input's value
+                if (editor && hiddenInput) {
+                    hiddenInput.value = editor.innerHTML;
+                }
+            });
+        });
+
+        // Example: If you were loading data from a server, you would do this:
+        // const initialTermsContent = "Your loaded <b>terms</b> content here.";
+        // document.querySelector('input[name="termsAndConditions"]').previousElementSibling.innerHTML = initialTermsContent;
+    });
+</script>

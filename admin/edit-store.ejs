@@ -1,0 +1,352 @@
+<%- include('./partials/header') %>
+<div class="wrapper">
+    <%- include('./partials/sidebar') %>
+    <%- include('./partials/adminHeader') %>
+
+    <div class="page-content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="settings-panel">
+                        <form action="/admin/store-profile" method="POST" enctype="multipart/form-data">
+                            <div class="settings-section">
+                                <div class="section-header">
+                                    <h3>Store Profile</h3>
+                                    <p>Update your store's logo, name, and public description.</p>
+                                </div>
+                                <div class="section-body">
+                                    <div class="profile-layout">
+                                        <div class="logo-upload-slot">
+                                            <label>Store Logo</label>
+                                            <div class="image-uploader square" onclick="document.getElementById('store-logo-input').click();">
+                                                <img src="https://placehold.co/400x400/E2E8F0/475569?text=Logo" class="preview-image" id="logo-preview">
+                                                <div class="upload-overlay">
+                                                    <i class="fas fa-camera"></i>
+                                                    <span>Change Logo</span>
+                                                </div>
+                                                <input type="file" id="store-logo-input" name="storeLogo" hidden accept="image/*">
+                                            </div>
+                                        </div>
+                                        <div class="profile-fields">
+                                            <div class="form-group">
+                                                <label for="store-name">Store Name</label>
+                                                <input type="text" id="store-name" name="storeName" class="form-control" placeholder="e.g., Crafted Charm">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="about-business">About Your Business</label>
+                                                <textarea id="about-business" name="aboutBusiness" class="form-control" rows="5" placeholder="Describe what makes your store special."></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="section-footer">
+                                    <button type="submit" class="btn btn-primary">Save Profile</button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <form action="/admin/contact-info" method="POST">
+                            <div class="settings-section">
+                                <div class="section-header">
+                                    <h3>Contact & Location</h3>
+                                    <p>Provide contact details so your customers can reach you.</p>
+                                </div>
+                                <div class="section-body">
+                                    <div class="form-grid">
+                                        <div class="form-group">
+                                            <label for="phone-number">Phone Number</label>
+                                            <input type="tel" id="phone-number" name="phoneNumber" class="form-control" placeholder="+91 12345 67890">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">Contact Email</label>
+                                            <input type="email" id="email" name="contactEmail" class="form-control" placeholder="contact@example.com">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="address">Full Address</label>
+                                        <textarea id="address" name="address" class="form-control" rows="3" placeholder="123 Fashion St, Style City, 110001"></textarea>
+                                    </div>
+                                </div>
+                                <div class="section-footer">
+                                    <button type="submit" class="btn btn-primary">Save Contact Info</button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <form action="/admin/social-links" method="POST">
+                            <div class="settings-section">
+                                <div class="section-header">
+                                    <h3>Social Media Links</h3>
+                                    <p>Add links to your social media profiles.</p>
+                                </div>
+                                <div class="section-body">
+                                    <div class="form-grid">
+                                        <div class="form-group">
+                                            <label for="instagram-url">Instagram</label>
+                                            <div class="social-input-group">
+                                                <i class="fab fa-instagram"></i>
+                                                <input type="text" id="instagram-url" name="instagramUrl" class="form-control" placeholder="https://instagram.com/yourprofile">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="facebook-url">Facebook</label>
+                                            <div class="social-input-group">
+                                                <i class="fab fa-facebook"></i>
+                                                <input type="text" id="facebook-url" name="facebookUrl" class="form-control" placeholder="https://facebook.com/yourpage">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="whatsapp-number">WhatsApp</label>
+                                            <div class="social-input-group">
+                                                <i class="fab fa-whatsapp"></i>
+                                                <input type="text" id="whatsapp-number" name="whatsappNumber" class="form-control" placeholder="+911234567890">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="youtube-url">YouTube</label>
+                                            <div class="social-input-group">
+                                                <i class="fab fa-youtube"></i>
+                                                <input type="text" id="youtube-url" name="youtubeUrl" class="form-control" placeholder="https://youtube.com/yourchannel">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="section-footer">
+                                    <button type="submit" class="btn btn-primary">Save Social Links</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('./partials/footer') %>
+<style>
+    :root {
+        --primary-color: #4f46e5;
+        --primary-hover-color: #4338ca;
+        --border-color: #e5e7eb;
+        --background-color: #f8fafc;
+        --card-background-color: #ffffff;
+        --text-primary: #111827;
+        --text-secondary: #6b7280;
+        --input-border: #d1d5db;
+    }
+
+    /* Base Layout */
+    .page-content {
+        padding: 1.5rem;
+    }
+
+    /* Main Settings Panel */
+    .settings-panel {
+        background: var(--card-background-color);
+        border: 1px solid var(--border-color);
+        border-radius: 0.75rem;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+        overflow: hidden;
+    }
+
+    /* Sections within the Panel */
+    .settings-section {
+        /* No padding here, moved to children */
+    }
+    form:not(:last-child) .settings-section {
+        border-bottom: 1px solid var(--border-color);
+    }
+    .section-header {
+        padding: 1.5rem 2rem 0 2rem;
+    }
+    .section-header h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin: 0;
+        color: var(--text-primary);
+    }
+    .section-header p {
+        margin: 0.25rem 0 0;
+        color: var(--text-secondary);
+        font-size: 0.875rem;
+    }
+    .section-body {
+        margin-top: 1.5rem;
+        padding: 0 2rem;
+    }
+
+    /* Form Elements & Grids */
+    .form-group {
+        margin-bottom: 1.25rem;
+    }
+    .form-group:last-child {
+        margin-bottom: 0;
+    }
+    .form-group label {
+        font-weight: 500;
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #374151;
+        font-size: 0.875rem;
+    }
+    .form-control {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        border: 1px solid var(--input-border);
+        border-radius: 0.5rem;
+        font-size: 1rem;
+        transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .form-control:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+    }
+    textarea.form-control {
+        resize: vertical;
+    }
+    .form-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0 1.5rem;
+    }
+    @media (min-width: 768px) {
+        .form-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+    
+    /* Store Profile Layout */
+    .profile-layout {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    @media (min-width: 768px) {
+        .profile-layout {
+            grid-template-columns: auto 1fr;
+            gap: 2rem;
+        }
+    }
+    .logo-upload-slot {
+        max-width: 150px;
+        margin: 0 auto;
+    }
+    @media (min-width: 768px) {
+        .logo-upload-slot {
+            margin: 0;
+        }
+    }
+
+    /* Social Input Group */
+    .social-input-group {
+        position: relative;
+    }
+    .social-input-group .form-control {
+        padding-left: 2.75rem;
+    }
+    .social-input-group i {
+        position: absolute;
+        top: 50%;
+        left: 1rem;
+        transform: translateY(-50%);
+        font-size: 1.125rem;
+        color: var(--text-secondary);
+        width: 20px;
+        text-align: center;
+    }
+
+    /* Image Uploader Style */
+    .image-uploader {
+        position: relative;
+        cursor: pointer;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        border: 2px dashed var(--input-border);
+        transition: border-color 0.2s;
+        width: 150px;
+        height: 150px;
+    }
+    .image-uploader:hover {
+        border-color: var(--primary-color);
+    }
+    .image-uploader:hover .upload-overlay {
+        opacity: 1;
+    }
+    .preview-image {
+        width: 100%;
+        height: 100%;
+        display: block;
+        background-color: #f3f4f6;
+        object-fit: cover;
+    }
+    .upload-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(17, 24, 39, 0.6);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out;
+        text-align: center;
+    }
+    .upload-overlay i {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+    .upload-overlay span {
+        font-size: 0.875rem;
+        font-weight: 500;
+    }
+
+    /* NEW Section Footer & Button */
+    .section-footer {
+        padding: 1rem 2rem;
+        text-align: right;
+        background-color: #f9fafb;
+        margin-top: 1.5rem;
+        border-top: 1px solid var(--border-color);
+    }
+    .btn {
+        padding: 0.625rem 1.5rem;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        cursor: pointer;
+        border: none;
+        font-size: 0.9rem;
+    }
+    .btn-primary {
+        background: var(--primary-color);
+        color: white;
+        transition: background-color 0.2s;
+    }
+    .btn-primary:hover {
+        background: var(--primary-hover-color);
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const logoInput = document.getElementById('store-logo-input');
+        const logoPreview = document.getElementById('logo-preview');
+
+        if (logoInput && logoPreview) {
+            logoInput.addEventListener('change', function(event) {
+                const file = event.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        logoPreview.src = e.target.result;
+                    }
+                    reader.readAsDataURL(file);
+                }
+            });
+        }
+    });
+</script>
